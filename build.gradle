@@ -1,0 +1,26 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.5
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+ideaProject {
+    javaVersion = '1.6'
+    languageLevel = '1.6'
+}
+
+dependencies {
+    def log4j = ["log4j:log4j:1.2.16"]
+    def slf4j = ["org.slf4j:slf4j-log4j12:1.6.1"]
+    def poi = ["org.apache.poi:poi:3.9",
+               "org.apache.poi:poi-ooxml:3.10-FINAL"]
+    def commons = ["commons-logging:commons-logging:1.1.1",
+                   "commons-beanutils:commons-beanutils:1.9.2"]
+    def gson = ["com.google.code.gson:gson:1.7.2"]
+    def junit =["junit:junit:4.11"]
+    compile poi,slf4j,log4j,commons,gson
+    testCompile junit
+}
